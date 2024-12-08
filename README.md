@@ -20,16 +20,27 @@ This is the backend of a blogging application built with Node.js, Express, and M
 ## Setup Instructions
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/iamRajatSharma/blog-backend.git
    cd blog-backend
 
+   ```
+
 2. Install dependency:
+
    ```bash
    npm install
+
+   ```
 
 3. Configure environment variables: Create/Copy a .env.sample file and Create/Copy a new .env file and change the all variable according to your configuration
 
 4. Run project:
    ```bash
    npm start
+   ```
+
+## Swagger UI
+
+- You can view and test the API endpoints at **http://localhost:5000/api-docs**.
