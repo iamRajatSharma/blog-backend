@@ -4,6 +4,7 @@ const rateLimit = require("express-rate-limit")
 const app = express();
 const userRoutes = require("./routes/userRoutes")
 const blogRoutes = require("./routes/blogRoutes")
+const commentRoutes = require("./routes/commentRoutes")
 const swaggerUi = require("swagger-ui-express");
 const morgan = require('morgan')
 const cors = require("cors")
@@ -37,6 +38,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 
 app.use("/api/users", userRoutes); // user routes
 app.use("/api/blogs", blogRoutes); // blog routes
+app.use("/api/comment", commentRoutes); // blog routes
 
 app.listen(PORT, (err) => {
     if (err) {
