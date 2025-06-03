@@ -44,3 +44,9 @@ This is the backend of a blogging application built with Node.js, Express, and M
 ## Swagger UI
 
 - You can view and test the API endpoints at **http://localhost:5000/api-docs**.
+
+## Postman API URL
+
+```bash
+https://bold-escape-598802.postman.co/workspace/Ecommerce-Nodejs~64a81f14-525f-456b-b828-64aa972a8cc9/collection/13315246-0340a6c1-9548-44f2-ad70-69dbf817366a?action=share&creator=13315246
+```
