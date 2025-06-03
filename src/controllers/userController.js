@@ -10,7 +10,7 @@ const signup = async (req, res) => {
 
         // validate input data
         const validateInput = SignUpInput.safeParse(req.body)
-        if (!validateInput.success) return res.status(404).json(validateInput.error.issues)
+        if (!validateInput.success) return res.status(400).json(validateInput.error.issues)
 
         // check user exists or not
         checkUser = await User.findOne({ username: username })
@@ -23,7 +23,7 @@ const signup = async (req, res) => {
         const newUser = new User({ username, password: hashedPassword });
         await newUser.save();
 
-        res.status(201).json({ message: "User created successfully!" });
+        res.status(201).json({ message: "User created successfully!", user: { username: newUser.username, id: newUser._id } });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
@@ -35,7 +35,7 @@ const login = async (req, res) => {
         const { username, password } = req.body;
 
         const validateInput = LoginInput.safeParse(req.body)
-        if (!validateInput.success) return res.status(404).json(validateInput.error.issues)
+        if (!validateInput.success) return res.status(400).json(validateInput.error.issues)
 
         // Check if user exists
         const user = await User.findOne({ username });

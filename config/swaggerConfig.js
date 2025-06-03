@@ -15,14 +15,18 @@ const options = {
         ],
         components: {
             securitySchemes: {
-                BearerAuth: {
+                bearerAuth: {
                     type: "http",
                     scheme: "bearer",
                     bearerFormat: "JWT",
                 },
             },
         },
-        security: [{ BearerAuth: [] }],
+        security: [
+            {
+                bearerAuth: [],
+            },
+        ],
     },
     apis: ["./src/routes/*.js"], // Path to your route files
 };
